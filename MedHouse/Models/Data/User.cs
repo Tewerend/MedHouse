@@ -18,6 +18,8 @@ namespace MedHouse.Models.Data
         [Required(ErrorMessage = "Введите дату регистрации")]
         [Display(Name = "Дата регистрации")]
         public DateTime Date_of_registarion {  get; set; }
+
+
         //навигационные свойства
     }
 }
