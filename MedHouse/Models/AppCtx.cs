@@ -11,5 +11,12 @@ namespace MedHouse.Models
         {
             Database.EnsureCreated();
         }
+
+        public DbSet<Provider> Providers { get; set; }
+
+        internal static Task<string?> ToListAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

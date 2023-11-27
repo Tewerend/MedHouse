@@ -6,8 +6,6 @@ namespace MedHouse.Models.Data
     public class User : IdentityUser
     {
         [Required(ErrorMessage = "Введите фамилию")]
-
-        //отображение Фамилия вместо LastName
         [Display(Name = "Фамилия")]
         public string LastName { get; set; }
 
@@ -17,7 +15,7 @@ namespace MedHouse.Models.Data
 
         [Required(ErrorMessage = "Введите дату регистрации")]
         [Display(Name = "Дата регистрации")]
-        public DateTime Date_of_registarion {  get; set; }
+        public DateTime DateRegistarion {  get; set; }
 
 
         //навигационные свойства
