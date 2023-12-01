@@ -1,20 +1,20 @@
-﻿@model IEnumerable<MedHouse.Models.Data.Provider>
+﻿@model IEnumerable<MedHouse.Models.Data.UniqueStorage>
 
 @{
-    ViewData["Title"] = "Поставщики";
+    ViewData["Title"] = "Склады";
 }
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Главная</a></li>
-        <li class="breadcrumb-item active">Поставщики</li>
+        <li class="breadcrumb-item active">Склады</li>
     </ol>
 </nav>
-<h2>Поставщики</h2>
+<h2>Склады</h2>
 
 <h6>
     <a class="btn text-dark" asp-action="Create">
-        <i class="far fa-plus-square"></i>  Добавить поставщика
+        <i class="far fa-plus-square"></i>  Добавить склад
     </a>
 </h6>
 
@@ -22,7 +22,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NameProvider)
+                @Html.DisplayNameFor(model => model.NameStorage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdressStorage)
             </th>
             <th></th>
         </tr>
@@ -31,7 +34,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.NameProvider)
+                @Html.DisplayFor(modelItem => item.NameStorage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdressStorage)
             </td>
             <td>
                 <td>

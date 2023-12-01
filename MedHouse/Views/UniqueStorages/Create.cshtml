@@ -1,13 +1,12 @@
-﻿@model MedHouse.ViewModels.Providers.CreateProviderViewModel
-
+﻿@model MedHouse.ViewModels.UniqueStorages.CreateUniqueStorageViewModel
 @{
-    ViewData["Title"] = "Создание - Поставщики";
+    ViewData["Title"] = "Создание - Склады";
 }
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Главная</a></li>
-        <li class="breadcrumb-item"><a asp-controller="Providers" asp-action="Index">Поставщики</a></li>
+        <li class="breadcrumb-item"><a asp-controller="UniqueStorages" asp-action="Index">Склады</a></li>
         <li class="breadcrumb-item active">Создание</li>
     </ol>
 </nav>
@@ -16,7 +15,7 @@
     <a class="btn text-dark" asp-action="Index" title="Вернуться к списку">
         <i class="fas fa-arrow-left"></i>
     </a>
-    Добавление поставщика
+    Добавление склада
 </h3>
 <hr />
 <div class="row">
@@ -24,9 +23,14 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="NameProvider" class="control-label"></label>
-                <input asp-for="NameProvider" class="form-control" />
-                <span asp-validation-for="NameProvider" class="text-danger"></span>
+                <label asp-for="NameStorage" class="control-label"></label>
+                <input asp-for="NameStorage" class="form-control" />
+                <span asp-validation-for="NameStorage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdressStorage" class="control-label"></label>
+                <input asp-for="AdressStorage" class="form-control" />
+                <span asp-validation-for="AdressStorage" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Добавить" class="btn btn-primary" />

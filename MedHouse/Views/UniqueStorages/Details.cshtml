@@ -1,0 +1,30 @@
+﻿@model MedHouse.Models.Data.UniqueStorage
+
+@{
+    ViewData["Title"] = "Склады";
+}
+
+<h3>
+    <a class="btn text-dark" asp-action="Index" title="Вернуться к списку">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    Просмотр поставщика
+</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NameStorage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NameStorage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdressStorage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdressStorage)
+        </dd>
+    </dl>
+</div>

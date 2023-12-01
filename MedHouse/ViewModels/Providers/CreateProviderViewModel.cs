@@ -4,7 +4,7 @@ namespace MedHouse.ViewModels.Providers
 {
     public class CreateProviderViewModel
     {
-        [Required(ErrorMessage = "Введите Поставщика")]
+        [Required(ErrorMessage = "Введите поставщика")]
         [Display(Name = "Поставщик")]
         public string NameProvider { get; set; }
     }

@@ -39,6 +39,27 @@ namespace MedHouse.Migrations
                     b.ToTable("Providers");
                 });
 
+            modelBuilder.Entity("MedHouse.Models.Data.UniqueStorage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdressStorage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameStorage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UniqueStorages");
+                });
+
             modelBuilder.Entity("MedHouse.Models.Data.User", b =>
                 {
                     b.Property<string>("Id")

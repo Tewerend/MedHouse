@@ -13,10 +13,6 @@ namespace MedHouse.Models
         }
 
         public DbSet<Provider> Providers { get; set; }
-
-        internal static Task<string?> ToListAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public DbSet<UniqueStorage> UniqueStorages { get; set; }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MedHouse.Migrations
 {
     [DbContext(typeof(AppCtx))]
-    [Migration("20231127125020_Initial")]
+    [Migration("20231201103411_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -40,6 +40,27 @@ namespace MedHouse.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Providers");
+                });
+
+            modelBuilder.Entity("MedHouse.Models.Data.UniqueStorage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdressStorage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameStorage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UniqueStorages");
                 });
 
             modelBuilder.Entity("MedHouse.Models.Data.User", b =>

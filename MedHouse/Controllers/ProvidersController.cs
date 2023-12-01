@@ -1,5 +1,4 @@
-﻿using Humanizer.Localisation;
-using MedHouse.Models;
+﻿using MedHouse.Models;
 using MedHouse.Models.Data;
 using MedHouse.ViewModels.Providers;
 using Microsoft.AspNetCore.Mvc;
@@ -104,6 +103,13 @@ namespace MedHouse.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, EditProviderViewModel model)
         {
+            if (_context.Providers
+                .Where(f => f.NameProvider == model.NameProvider)
+                .FirstOrDefault() != null)
+            {
+                ModelState.AddModelError("", "Введеный поставщик уже существует");
+            }
+
             Provider provider = await _context.Providers.FindAsync(id);
 
             if (id != provider.Id)
@@ -115,6 +121,7 @@ namespace MedHouse.Controllers
             {
                 try
                 {
+                    provider.NameProvider= model.NameProvider;
                     _context.Update(provider);
                     await _context.SaveChangesAsync();
                 }

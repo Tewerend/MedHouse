@@ -67,6 +67,20 @@ namespace MedHouse.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UniqueStorages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NameStorage = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AdressStorage = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UniqueStorages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -232,6 +246,9 @@ namespace MedHouse.Migrations
 
             migrationBuilder.DropTable(
                 name: "Providers");
+
+            migrationBuilder.DropTable(
+                name: "UniqueStorages");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
