@@ -5,3 +5,17 @@
 <div class="text-center">
     <h1>Добро пожаловать</h1>
 </div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p class ="text-center">Здравствуйте @User.Identity.Name</p>
+
+    <form method="post" asp-controller="Account" asp-action="Logout">
+        <input type="submit" value="Выход" />
+    </form>
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-block mt-3">Вход</a>
+    <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-block mt-3">Регистрация</a>
+}
