@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MedHouse.Migrations
 {
     [DbContext(typeof(AppCtx))]
-    [Migration("20231201103411_Initial")]
+    [Migration("20231204094337_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -24,6 +24,23 @@ namespace MedHouse.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("MedHouse.Models.Data.MeasuringMedication", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Measuring")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MeasuringMedications");
+                });
 
             modelBuilder.Entity("MedHouse.Models.Data.Provider", b =>
                 {

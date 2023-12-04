@@ -22,6 +22,23 @@ namespace MedHouse.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("MedHouse.Models.Data.MeasuringMedication", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Measuring")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MeasuringMedications");
+                });
+
             modelBuilder.Entity("MedHouse.Models.Data.Provider", b =>
                 {
                     b.Property<int>("Id")

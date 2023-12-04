@@ -8,11 +8,13 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <p class ="text-center">Здравствуйте @User.Identity.Name</p>
+    <div class = "d-flex flex-column align-items-center">
+        <p class>Здравствуйте @User.Identity.Name</p>
 
-    <form method="post" asp-controller="Account" asp-action="Logout">
-        <input type="submit" value="Выход" />
-    </form>
+        <form method="post" asp-controller="Account" asp-action="Logout">
+            <input type="submit" value="Выход" />
+        </form>
+    </div>
 }
 else
 {

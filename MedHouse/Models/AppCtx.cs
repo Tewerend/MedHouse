@@ -14,5 +14,6 @@ namespace MedHouse.Models
 
         public DbSet<Provider> Providers { get; set; }
         public DbSet<UniqueStorage> UniqueStorages { get; set; }
+        public DbSet<MeasuringMedication> MeasuringMedications { get; set; }
     }
 }

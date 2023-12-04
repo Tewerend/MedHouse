@@ -53,6 +53,19 @@ namespace MedHouse.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MeasuringMedications",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Measuring = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MeasuringMedications", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Providers",
                 columns: table => new
                 {
@@ -242,6 +255,9 @@ namespace MedHouse.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "MeasuringMedications");
 
             migrationBuilder.DropTable(
                 name: "Providers");

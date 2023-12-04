@@ -121,7 +121,7 @@ namespace MedHouse.Controllers
             {
                 try
                 {
-                    provider.NameProvider= model.NameProvider;
+                    provider.NameProvider = model.NameProvider;
                     _context.Update(provider);
                     await _context.SaveChangesAsync();
                 }
